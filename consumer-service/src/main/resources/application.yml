@@ -1,0 +1,16 @@
+app:
+  rabbitmq:
+    exchange: employeeexchange
+    queue: employeequeue
+    routingkey: employeeroutingkey
+spring:
+  rabbitmq:
+    #add the rabbitmq headless service name as host
+    host: rabbitmq
+    #add the username and password from secret. For example: ${<environment variable name>}
+    username: ${RABBITMQ_PASSWORD}
+    password: ${RABBITMQ_USERNAME}
+
+    port: 15672
+server:
+  port: 8081
